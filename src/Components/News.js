@@ -6,7 +6,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 import Newsitem from "./Newsitem";
 
 const News = (props) => {
-  const [articles, setArticals] = useState([]);
+  const [results, setResults] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true)
   const [totalResults, setTotalResults] = useState(0);
@@ -16,14 +16,14 @@ const News = (props) => {
 
     const updateNews = async ()=> {
       props.setProgress(10);
-      const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=4e8e311995a94cdc84613c08ca4dd807&page=${page}&pageSize=${props.pageSize}`; 
+      const url = `https://newsdata.io/api/1/news?apikey=pub_4633f7c36e004fc89d87ad61056ddd05dec4&country=${props.country}&category=${props.category}&page=${page}`; 
 
       setLoading(true)
       let data = await fetch(url);
       props.setProgress(30);
       let parsedData = await data.json()
       props.setProgress(70);
-      setArticals(parsedData.articles)
+      setResults(parsedData.results)
       setTotalResults(parsedData.totalResults)
       setLoading(false)
       props.setProgress(100);
@@ -34,12 +34,12 @@ const News = (props) => {
   }, []);
 
   const fetchMoreData = async () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=4e8e311995a94cdc84613c08ca4dd807&page=${page+1}&pageSize=${props.pageSize}`;
+    const url = `https://newsdata.io/api/1/news?apikey=pub_4633f7c36e004fc89d87ad61056ddd05dec4&country=${props.country}&category=${props.category}&page=${page+1}`;
 
     setPage(page + 1);
     let data = await fetch(url);
     let parsedData = await data.json();
-    setArticals(articles.concat(parsedData.articles));
+    setResults(results.concat(parsedData.results));
     setTotalResults(parsedData.totalResults);
   };
 
@@ -48,7 +48,7 @@ const News = (props) => {
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
-    const newFilter = articles.filter((value) => {
+    const newFilter = results.filter((value) => {
       return value.title.toLowerCase().includes(searchWord.toLowerCase());
     });
 
@@ -123,29 +123,28 @@ const News = (props) => {
       <h1 style={{textAlign:"center"}}>Top Headlines Bhaarat News </h1>
       {loading && <Spinner />}
       <InfiniteScroll
-                    dataLength={articles.length}
+                    dataLength={results.length}
                     next={fetchMoreData}
-                    hasMore={articles.length !== totalResults}
+                    hasMore={results.length !== totalResults}
                     loader={<Spinner/>}
                 > 
                 
       <div className="row" >
-        {filteredData.length === 0 ? articles.map((element) => {
+        {filteredData.length === 0 ? results.map((element) => {
           return (
-            <div className="col-md-4" key={element.url}>
+            <div className="col-md-4" key={element.link}>
               <Newsitem
                 title={element.title ? element.title : ""}
                 description={element.description ? element.description : ""}
                 imageUrl={
-                  element.urlToImage
-                    ? element.urlToImage
+                  element.image_url
+                    ? element.image_url
                     : "https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg"
                 }
-                newsUrl={element.url ? element.url : ""}
-                author={element.author ? element.author : "Unknown"}
-                date={element.publishedAt ? element.publishedAt : ""}
-                source={element.source.name ? element.source.name : "Unknown"}
-                id={element.source.id ? element.source.id : ""}
+                newsUrl={element.link ? element.link : ""}
+                author={element.creator ? element.creator : "Unknown"}
+                date={element.pubDate ? element.pubDate : ""}
+                source={element.source_id ? element.source_id : "Unknown"}
                 content={element.content ? element.content : ""}
               />
             </div>
@@ -157,15 +156,14 @@ const News = (props) => {
                 title={element.title ? element.title : ""}
                 description={element.description ? element.description : ""}
                 imageUrl={
-                  element.urlToImage
-                    ? element.urlToImage
+                  element.image_url
+                    ? element.image_url
                     : "https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg"
                 }
-                newsUrl={element.url ? element.url : ""}
-                author={element.author ? element.author : "Unknown"}
-                date={element.publishedAt ? element.publishedAt : ""}
-                source={element.source.name ? element.source.name : "Unknown"}
-                id={element.source.id ? element.source.id : ""}
+                newsUrl={element.link ? element.link : ""}
+                author={element.creator ? element.creator : "Unknown"}
+                date={element.pubDate ? element.pubDate : ""}
+                source={element.source_id ? element.source_id : "Unknown"}
                 content={element.content ? element.content : ""}
               />
             </div>

@@ -27,10 +27,10 @@ function App() {
           <div className="container">
 
         <Routes>
-          <Route exact path="/" element={<News setProgress={setProgress}   key="general" pageSize={pageSize} country="in" category="general"/>}></Route> 
+          <Route exact path="/" element={<News setProgress={setProgress}   key="top" pageSize={pageSize} country="in" category="top"/>}></Route> 
           <Route exact path="/business" element={<News setProgress={setProgress}   key="business" pageSize={pageSize} country="in" category="business"/>}></Route> 
           <Route exact path="/entertainment" element={<News setProgress={setProgress}   key="entertainment" pageSize={pageSize} country="in" category="entertainment"/>}></Route> 
-          <Route exact path="/general" element={<News setProgress={setProgress}   key="general" pageSize={pageSize} country="in" category="general"/>}></Route> 
+          <Route exact path="/top" element={<News setProgress={setProgress}   key="top" pageSize={pageSize} country="in" category="top"/>}></Route> 
           <Route exact path="/health" element={<News setProgress={setProgress}   key="health" pageSize={pageSize} country="in" category="health"/>   }></Route> 
           <Route exact path="/science" element={<News setProgress={setProgress}   key="science" pageSize={pageSize} country="in" category="science"/>}></Route> 
           <Route exact path="/sports" element={<News setProgress={setProgress}   key="sports" pageSize={pageSize} country="in" category="sports"/>}></Route> 

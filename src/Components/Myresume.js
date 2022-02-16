@@ -152,7 +152,6 @@ return(
               <p>Munsi Premchand Rajkiya sarvodaya Bal vidyalya
 </p>
             </div>
-            setLoading(false)
 
 
           </div>
