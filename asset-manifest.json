@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.cccbcf64.css",
-    "main.js": "/static/js/main.756ad9ec.js",
-    "static/js/787.0ac9ff8b.chunk.js": "/static/js/787.0ac9ff8b.chunk.js",
-    "static/media/Nitin.jpg": "/static/media/Nitin.ebdd72644352414fa8bb.jpg",
-    "index.html": "/index.html",
-    "main.cccbcf64.css.map": "/static/css/main.cccbcf64.css.map",
-    "main.756ad9ec.js.map": "/static/js/main.756ad9ec.js.map",
-    "787.0ac9ff8b.chunk.js.map": "/static/js/787.0ac9ff8b.chunk.js.map"
+    "main.css": "/bhaaratnews/static/css/main.cccbcf64.css",
+    "main.js": "/bhaaratnews/static/js/main.01407dc5.js",
+    "static/js/787.0ac9ff8b.chunk.js": "/bhaaratnews/static/js/787.0ac9ff8b.chunk.js",
+    "static/media/Nitin.jpg": "/bhaaratnews/static/media/Nitin.ebdd72644352414fa8bb.jpg",
+    "index.html": "/bhaaratnews/index.html",
+    "main.cccbcf64.css.map": "/bhaaratnews/static/css/main.cccbcf64.css.map",
+    "main.01407dc5.js.map": "/bhaaratnews/static/js/main.01407dc5.js.map",
+    "787.0ac9ff8b.chunk.js.map": "/bhaaratnews/static/js/787.0ac9ff8b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cccbcf64.css",
-    "static/js/main.756ad9ec.js"
+    "static/js/main.01407dc5.js"
   ]
 }
