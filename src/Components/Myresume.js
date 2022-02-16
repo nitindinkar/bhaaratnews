@@ -101,7 +101,7 @@ return(
             <h2 style={headingstyle} className="resume-text-grey resume-padding-16"><i className="fa fa-suitcase fa-fw resume-margin-right resume-xxlarge resume-text-teal"></i>Projects</h2>
 
             <div className="resume-container">
-              <h5 style={headingstyle} className="resume-opacity"><a href="/" target=""><b>Bhaarat News</b> <i className="fas fa-external-link-alt" aria-hidden="true"></i>
+              <h5 style={headingstyle} className="resume-opacity"><a href="/" ><b>Bhaarat News</b> <i className="fas fa-external-link-alt" aria-hidden="true"></i>
 </a></h5>
               <p>Bhaarat is a my own build news react application in which letest news data fetch from API and you can search news by key word or navigate by category. </p>
               <p>Skills:- React , Css, Bootstrap, and Javascript.
