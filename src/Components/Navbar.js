@@ -37,7 +37,7 @@ useEffect(() => {
     <div>
       <nav id="header" className="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
         <div className="container bg-dark">
-          <Link className="navbar-brand" to="/bhaaratnews">
+          <Link className="navbar-brand" to="/">
             Bhaarat News
           </Link>
           <button
@@ -63,7 +63,7 @@ useEffect(() => {
                             <li className="nav-item"><Link className="nav-link" to="/science">Science</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/sports">Sports</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/technology">Technology</Link></li>
-                            <li className="nav-item"><Link className="nav-link" to="bhaaratnews/myresume">My Resume</Link></li>
+                            <li className="nav-item"><Link className="nav-link" to="/myresume">My Resume</Link></li>
                         </ul>
 
 
